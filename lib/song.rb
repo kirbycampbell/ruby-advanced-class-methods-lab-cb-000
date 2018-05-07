@@ -18,10 +18,9 @@ class Song
 #Same as above but saves it into @@all
   def self.create_by_name(name_string)
       title = self.new
-      title.create
-      #title.name = name_string
-      #title.save
-      #title
+      title.name = name_string
+      title.save
+      title
   end
 # Searches by name
   def self.find_by_name(name_string)
