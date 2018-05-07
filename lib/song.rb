@@ -49,8 +49,8 @@ class Song
 # Same as above but saves
   def self.create_from_filename(file)
     song = self.new
-    song.name = file.split(/[^a-zA-Z\s]|\s-\s/)[1]
-    song.artist_name = file.split(/[^a-zA-Z\s]|\s-\s/)[0]
+    song.name = file.split(" - ")[1].chop.chop.chop.chop
+    song.artist_name = file.split(" - ")[0]
     song.save
     song
   end
